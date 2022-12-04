@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Protected Site"
+AuthUserFile /nightcrawler06/nightcrawler06.github.io/.htapasswd
+require valid-user
