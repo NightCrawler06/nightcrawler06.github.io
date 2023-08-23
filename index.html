@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form | NightCrawler</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/NC1.png" type="image/png">
+    </head>
+    <body>
+        <div class="bg-img">
+            <div class="content">
+                <form onsubmit="submitForm(event)">
+                    <header>SIGN IN</header>
+                    <div class="field">    
+                        <input type="email" id="email" name="email" required placeholder="Email or Phone">
+                    </div>
+                    <br>
+                    <div class="field space">
+                        <input type="password" id="passwd" name="passwd" required placeholder="Password">
+                        <button class="btn" type="button" onclick="showPassword()">Show</button>
+                    </div>
+                    <br>
+                    <input type="submit" value="Submit">
+                    <br>
+                    <button class="btn" onclick="location.href='index2.html'" >Sign Up</button>
+                </form>
+                <script>
+                    function submitForm(event) {
+                        event.preventDefault(); 
+                        const email = document.getElementById('email').value;
+                        const passwd = document.getElementById('passwd').value;
+                        if (!email || !passwd) {
+                            alert('Please fill in all required fields!');
+                            return;
+                        }
+                        window.location.href = "home.html";
+                    }
+                    function showPassword() {
+                        const passwdInput = document.getElementById('passwd');
+                        if (passwdInput.type === 'password') {
+                            passwdInput.type = 'text';
+                        } else {
+                            passwdInput.type = 'password';
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
